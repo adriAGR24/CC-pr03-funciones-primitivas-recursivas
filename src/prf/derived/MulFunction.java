@@ -4,9 +4,9 @@ import prf.basic.ProjectionFunction;
 import prf.basic.ZeroFunction;
 import prf.core.ArityFunctionChecker;
 import prf.core.PrimitiveFunction;
-import prf.operators.CombinationOperator;
-import prf.operators.CompositionOperator;
-import prf.operators.RecursionOperator;
+import prf.operators.CombinationOperation;
+import prf.operators.CompositionOperation;
+import prf.operators.RecursionOperation;
 
 public class MulFunction extends ArityFunctionChecker {
   public MulFunction() {
@@ -20,8 +20,8 @@ public class MulFunction extends ArityFunctionChecker {
     PrimitiveFunction add = new AddFunction();
     PrimitiveFunction projection13 = new ProjectionFunction(1, 3);
     PrimitiveFunction projection33 = new ProjectionFunction(3, 3);
-    PrimitiveFunction recursive = new CompositionOperator(add, new CombinationOperator(projection33, projection13));
+    PrimitiveFunction recursive = new CompositionOperation(add, new CombinationOperation(projection33, projection13));
 
-    return new RecursionOperator(base, recursive).apply(args);
+    return new RecursionOperation(base, recursive).apply(args);
   }
 }

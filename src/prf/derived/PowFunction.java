@@ -3,9 +3,9 @@ package prf.derived;
 import prf.basic.ProjectionFunction;
 import prf.core.ArityFunctionChecker;
 import prf.core.PrimitiveFunction;
-import prf.operators.CombinationOperator;
-import prf.operators.CompositionOperator;
-import prf.operators.RecursionOperator;
+import prf.operators.CombinationOperation;
+import prf.operators.CompositionOperation;
+import prf.operators.RecursionOperation;
 
 public class PowFunction extends ArityFunctionChecker {
   public PowFunction() {
@@ -19,8 +19,8 @@ public class PowFunction extends ArityFunctionChecker {
     PrimitiveFunction mul = new MulFunction();
     PrimitiveFunction projection13 = new ProjectionFunction(1, 3);
     PrimitiveFunction projection33 = new ProjectionFunction(3, 3);
-    PrimitiveFunction recursive = new CompositionOperator(mul, new CombinationOperator(projection33, projection13));
+    PrimitiveFunction recursive = new CompositionOperation(mul, new CombinationOperation(projection33, projection13));
 
-    return new RecursionOperator(base, recursive).apply(args);
+    return new RecursionOperation(base, recursive).apply(args);
   }
 }

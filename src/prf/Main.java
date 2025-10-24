@@ -1,7 +1,7 @@
 package prf;
 
 
-import prf.core.FunctionLogger;
+import prf.core.FunctionCallLogger;
 import prf.core.PrimitiveFunction;
 import prf.derived.PowFunction;
 import prf.utils.ArgumentParser;
@@ -17,7 +17,7 @@ public class Main {
       System.out.println(pow.apply(parser.base, parser.exponent)[0]);
       System.out.println();
       System.out.println("\u001b[1m\u001b[4mCall Count\u001b[0m");
-      System.out.println(FunctionLogger.getCallCount());
+      System.out.println(FunctionCallLogger.getCallCount());
     } catch (Exception error) {
       System.err.println("ERROR: " + error.getMessage());
       System.exit(1);

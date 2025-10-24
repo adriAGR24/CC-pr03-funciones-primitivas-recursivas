@@ -1,9 +1,9 @@
 package prf.core;
 
-public final class FunctionLogger {
+public final class FunctionCallLogger {
   private static int callCount = 0;
 
-  private FunctionLogger() {}
+  private FunctionCallLogger() {}
 
   public static void incrementCallCount() {
     callCount++;

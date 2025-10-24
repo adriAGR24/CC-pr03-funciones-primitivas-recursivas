@@ -4,8 +4,8 @@ import prf.basic.ProjectionFunction;
 import prf.basic.SuccessorFunction;
 import prf.core.ArityFunctionChecker;
 import prf.core.PrimitiveFunction;
-import prf.operators.CompositionOperator;
-import prf.operators.RecursionOperator;
+import prf.operators.CompositionOperation;
+import prf.operators.RecursionOperation;
 
 public class AddFunction extends ArityFunctionChecker {
   public AddFunction() {
@@ -18,8 +18,8 @@ public class AddFunction extends ArityFunctionChecker {
 
     PrimitiveFunction successor = new SuccessorFunction();
     PrimitiveFunction projection33 = new ProjectionFunction(3, 3);
-    PrimitiveFunction recursive = new CompositionOperator(successor, projection33);
+    PrimitiveFunction recursive = new CompositionOperation(successor, projection33);
 
-    return new RecursionOperator(base, recursive).apply(args);
+    return new RecursionOperation(base, recursive).apply(args);
   }
 }

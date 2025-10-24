@@ -4,7 +4,7 @@ import prf.basic.SuccessorFunction;
 import prf.basic.ZeroFunction;
 import prf.core.ArityFunctionChecker;
 import prf.core.PrimitiveFunction;
-import prf.operators.CompositionOperator;
+import prf.operators.CompositionOperation;
 
 public class OneFunction extends ArityFunctionChecker {
   public OneFunction() {
@@ -15,6 +15,6 @@ public class OneFunction extends ArityFunctionChecker {
   protected int[] compute(int... args) {
     PrimitiveFunction zero = new ZeroFunction();
     PrimitiveFunction successor = new SuccessorFunction();
-    return new CompositionOperator(successor, zero).apply(args);
+    return new CompositionOperation(successor, zero).apply(args);
   }
 }

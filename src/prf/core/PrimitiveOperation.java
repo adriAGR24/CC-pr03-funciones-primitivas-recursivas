@@ -1,6 +1,6 @@
 package prf.core;
 
-public abstract class PrimitiveOperator implements PrimitiveFunction {
+public abstract class PrimitiveOperation implements PrimitiveFunction {
 
   @Override
   public final int[] apply(int... args) {

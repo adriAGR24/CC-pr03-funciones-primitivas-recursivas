@@ -10,8 +10,8 @@ public class ArgumentParser {
   + "Try ./runProgram.sh -h for more information.";
 
   private final String helpText =
-    "This program calculates a power from a base and an exponent given as parameters."
-  + "For this, Recursive Primitive Functions are used, which are defined in the domain"
+    "This program calculates a power from a base and an exponent given as parameters. "
+  + "For this, Recursive Primitive Functions are used, which are defined in the domain "
   + "of Natural Numbers (0 - inf).\n\n"
   + "Usage: ./runProgram.sh -b <base> -e <exponent>\n\n"
   + "Arguments:\n"

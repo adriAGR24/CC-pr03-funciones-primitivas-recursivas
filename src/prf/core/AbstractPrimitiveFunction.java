@@ -4,7 +4,7 @@ public abstract class AbstractPrimitiveFunction implements PrimitiveFunction {
 
   @Override
   public int[] apply(int... args) {
-    FunctionLogger.incrementCallCount();
+    FunctionCallLogger.incrementCallCount();
     return compute(args);
   }
 

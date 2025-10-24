@@ -1,15 +1,15 @@
 package prf.operators;
 
-import prf.core.FunctionLogger;
+import prf.core.FunctionCallLogger;
 import prf.core.PrimitiveFunction;
-import prf.core.PrimitiveOperator;
+import prf.core.PrimitiveOperation;
 import prf.utils.ArrayUtils;
 
-public class RecursionOperator extends PrimitiveOperator {
+public class RecursionOperation extends PrimitiveOperation {
   private final PrimitiveFunction base;
   private final PrimitiveFunction recursive;
   
-  public RecursionOperator(PrimitiveFunction base, PrimitiveFunction recursive) {
+  public RecursionOperation(PrimitiveFunction base, PrimitiveFunction recursive) {
     this.base = base;
     this.recursive = recursive;
   }
@@ -27,7 +27,7 @@ public class RecursionOperator extends PrimitiveOperator {
     
     int[] prevArgs = args.clone();
     prevArgs[prevArgs.length - 1] = dynamicArg - 1;
-    FunctionLogger.incrementCallCount();
+    FunctionCallLogger.incrementCallCount();
     int[] prevRecursiveValue = compute(prevArgs);
     return recursive.apply(ArrayUtils.concat(prevArgs, prevRecursiveValue));
   }
