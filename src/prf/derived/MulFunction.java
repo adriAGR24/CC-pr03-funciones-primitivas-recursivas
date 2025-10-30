@@ -8,11 +8,24 @@ import prf.operators.CombinationOperation;
 import prf.operators.CompositionOperation;
 import prf.operators.RecursionOperation;
 
+/**
+ * Multiplication implemented as a primitive recursive function.
+ *
+ * <p>This function expects two arguments and uses addition and recursion to
+ * compute the product.</p>
+ */
 public class MulFunction extends ArityFunctionChecker {
+  /** Create a multiplication function that requires exactly two arguments. */
   public MulFunction() {
     super(2);
   }
 
+  /**
+   * Compute the product of two natural numbers using primitive recursion.
+   *
+   * @param args two-element array containing the operands
+   * @return single-element array with the product
+   */
   @Override
   protected int[] compute(int... args) {
     PrimitiveFunction base = new ZeroFunction();

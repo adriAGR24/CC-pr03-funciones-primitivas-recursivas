@@ -1,12 +1,27 @@
 package prf;
 
-
 import prf.core.FunctionCallLogger;
 import prf.core.PrimitiveFunction;
 import prf.derived.PowFunction;
 import prf.utils.ArgumentParser;
 
+/**
+ * Entry point for the primitive recursive functions demo application.
+ *
+ * <p>This class parses command line arguments (base and exponent), computes
+ * the power using a primitive-recursive implementation (via {@link PowFunction})
+ * and prints the result together with the total number of primitive function
+ * calls performed.</p>
+ */
 public class Main {
+  /**
+   * Main method and program entry point.
+   *
+   * @param args command line arguments. Expected flags are {@code -b <base>} and
+   *             {@code -e <exponent>} (both natural numbers). The program
+   *             prints usage or help text if the arguments are missing or
+   *             {@code -h} is provided.
+   */
   public static void main(String[] args) {
     try {
       ArgumentParser parser = new ArgumentParser(args);

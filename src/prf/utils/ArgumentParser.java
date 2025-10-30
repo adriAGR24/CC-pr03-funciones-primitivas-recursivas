@@ -1,8 +1,17 @@
 package prf.utils;
 
+/**
+ * Parses command line arguments for the demo program.
+ *
+ * <p>It extracts two required natural number arguments: {@code -b <base>} and
+ * {@code -e <exponent>}. If {@code -h} is provided, usage information is
+ * printed and the program exits.</p>
+ */
 public class ArgumentParser {
   
+  /** Parsed base value (natural number). */
   public int base = -1;
+  /** Parsed exponent value (natural number). */
   public int exponent = -1;
 
   private final String useText =
@@ -18,6 +27,14 @@ public class ArgumentParser {
   + "- -b <base>: Base of the power.\n"
   + "- -e <exponent>: Exponent of the power.";
 
+  /**
+   * Parse provided command line arguments and populate {@link #base} and
+   * {@link #exponent}.
+   *
+   * @param args raw arguments passed to {@code main}
+   * @throws IllegalArgumentException when a required argument is missing or
+   *         when a provided value is not a natural number
+   */
   public ArgumentParser(String[] args) {
     for (int i = 0; i < args.length; ++i) {
       String argument = args[i];

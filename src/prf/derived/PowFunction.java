@@ -7,11 +7,24 @@ import prf.operators.CombinationOperation;
 import prf.operators.CompositionOperation;
 import prf.operators.RecursionOperation;
 
+/**
+ * Exponentiation (power) implemented as a primitive recursive function.
+ *
+ * <p>Expect two arguments: base and exponent. Uses multiplication and recursion
+ * to compute base^exponent.</p>
+ */
 public class PowFunction extends ArityFunctionChecker {
+  /** Create a power function requiring exactly two arguments (base, exponent). */
   public PowFunction() {
     super(2);
   }
 
+  /**
+   * Compute base raised to exponent using primitive recursion.
+   *
+   * @param args two-element array: {base, exponent}
+   * @return single-element array with base^exponent
+   */
   @Override
   protected int[] compute(int... args) {
     PrimitiveFunction base = new OneFunction();
